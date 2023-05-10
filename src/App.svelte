@@ -5,7 +5,8 @@
   import AtAvatar from "./lib/AtAvatar.svelte";
   import Socials from "./lib/Socials.svelte";
   import { Button, Card, Form, Input } from "spaper";
-  import { success, danger } from "spaper/components/Toast";
+  // import { success, danger } from "spaper/components/Toast";
+
 
   // utility functions
   const project_img = (name: string) => {
@@ -66,7 +67,7 @@
         "We build long lasting relationships with our small business customers on a mutually beneficial ground",
       img: "creditpro",
       btnText: "Check it out",
-      link: "https://creditpro-sme.netlify.app/",
+      link: "https://app.creditprosme.com/",
     },
     {
       title: "Fundall - Digitizing finance for everyone",
@@ -147,10 +148,11 @@
   </div>
 
   <div>
-    <span
+    <p
       class="animate__animated animate__delay-1s animate__repeat-2 animate__wobble"
-      >Hey!,</span
     >
+      Hey!,
+    </p>
     <h1 use:concurrent={{ interval: 30 }}>
       I'm Okoli Jahbuchim Jeff, a self-taught front-end developer.
     </h1>
@@ -178,7 +180,7 @@
     <div class="row">
       {#each stack as tech_stack (tech_stack)}
         <img
-          class="col-4 sm-3 md-2 margin-small shadow hover-shadow"
+          class="col-5 sm-3 md-2 margin-small shadow hover-shadow"
           src={getImageUrlSvg(tech_stack)}
           alt="Vue.js"
         />
@@ -209,15 +211,15 @@
     <center class="at-8">
       {#if showMoreOrLess}
         <Button on:click={() => show_more(more_project)} size="large"
-          >See more</Button
+          >Show more</Button
         >
       {/if}
     </center>
   </div>
 
-  <div>
+  <div class="at-contact-me margin-bottom-small">
     <h2>Contact me</h2>
-    <form action="https://formspree.io/f/mvonlybp" method="post" class="w-100">
+    <form action="https://formspree.io/f/mvonlybp" class="w-100" method="post">
       <Input
         name="name"
         placeholder="Enter fullname"
@@ -230,7 +232,7 @@
       />
       <Input name="message" placeholder="Message" type="textarea" />
 
-      <Button nativeType="submit" type="primary" class="margin-top-small"
+      <Button block nativeType="submit" type="primary" class="margin-top-small"
         >Send message</Button
       >
     </form>
@@ -241,8 +243,31 @@
 </main>
 
 <style>
+  h2 {
+    margin: 30px 0px;
+  }
+  .w-100 {
+    width: 100%;
+    max-width: 900px;
+  }
+  .at-contact-me {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
   :global(html) {
     scroll-behavior: smooth;
+  }
+  :global(input) {
+    width: 100%;
+    max-width: 500px;
+  }
+  :global(textarea) {
+    width: 100%;
+    max-width: 500px;
   }
   .to-top {
     padding: 0.6em 1em;
@@ -272,7 +297,7 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    margin: 30px 0;
+    margin: 10px 0;
   }
 
   .at-profile p {
