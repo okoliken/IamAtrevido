@@ -1,6 +1,7 @@
 <script lang="ts">
   import { concurrent } from "svelte-typewriter";
   import "animate.css";
+  import 'papercss/dist/paper.min.css'
   import { fade, fly } from "svelte/transition";
   import AtAvatar from "./lib/AtAvatar.svelte";
   import Socials from "./lib/Socials.svelte";
@@ -314,9 +315,7 @@
     scroll-behavior: smooth;
    
   }
-:global(body){
-  overflow-x: hidden;
-}
+
   :global(input) {
     width: 100%;
     max-width: 500px;
@@ -393,7 +392,7 @@
 
   .at-cta-btn-con img {
     max-width: 55px;
-    transform: rotate(180deg) !important;
+    transform: rotate(60deg) !important;
   }
 
   .at-flex-between {
