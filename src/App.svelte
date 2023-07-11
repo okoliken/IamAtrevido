@@ -7,10 +7,12 @@
   import { Button, Card, Form, Input } from "spaper";
   // import { success, danger } from "spaper/components/Toast";
 
-
   // utility functions
   const project_img = (name: string) => {
     return new URL(`./assets/projects/${name}.png`, import.meta.url).href;
+  };
+  const JPEG_img = (name: string) => {
+    return new URL(`./assets/${name}.jpeg`, import.meta.url).href;
   };
   const getImageUrlSvg = (name: string) => {
     return new URL(`./assets/${name}.svg`, import.meta.url).href;
@@ -142,42 +144,67 @@
 <div id="top">
   <Socials />
 </div>
-<main class="container at-flexbox">
-  <div class="at-flexbox at-8">
-    <AtAvatar />
-  </div>
+<main class="at-container at-flexbox">
+  <div class="at-flex at-8">
+    <img
+      class="at-stroke-arrow"
+      src={getImageUrlSvg("Stroke-Twist")}
+      style="border: none !important;"
+      alt="arrow"
+    />
 
+    <AtAvatar />
+
+    <div class="at-bg-pattern" />
+  </div>
+  x
   <div>
-    <p
-      class="animate__animated animate__delay-1s animate__repeat-2 animate__wobble"
-    >
-      Hey!,
-    </p>
+    <p>Hey!,</p>
     <h1 use:concurrent={{ interval: 30 }}>
       I'm Okoli Jahbuchim Jeff, a self-taught front-end developer.
     </h1>
-    <Button
-      class="animate__animated animate__jello animate__delay-1s animate__repeat-2"
-      href="https://drive.google.com/file/d/1JgoHUPe8s8h2sT1FIZIDq_VHHt4Eq8wn/view?usp=share_link"
-      target="_blank"
-      size="large">View my resume</Button
-    >
+
+    <div class="at-cta-btn-con">
+      <Button
+        class="animate__animated animate__jello animate__delay-1s animate__repeat-2"
+        href="https://drive.google.com/file/d/1JgoHUPe8s8h2sT1FIZIDq_VHHt4Eq8wn/view?usp=share_link"
+        target="_blank"
+        size="large">View my resume</Button
+      >
+      <img
+        src={getImageUrlSvg("Stroke-Medium-Curve")}
+        style="border: none !important;"
+        alt="arrow"
+      />
+    </div>
   </div>
 
-  <div class="at-profile">
-    <h2>Who am I</h2>
-    <p use:concurrent={{ interval: 30 }}>
-      I am a software developer who pays close attention to details and loves
-      working on the part of software that users interact with, known as
-      frontend development. Creating beautiful and easy-to-use websites and
-      applications is my passion, and I believe that I would be a great fit for
-      your organization.
-    </p>
+  <div class="at-flex-between at-8">
+    <div class="at-profile">
+      <h2>Who am I</h2>
+      <p>
+        Certainly! Here's a more concise version:
+
+"Hello! I'm a detail-oriented software developer specializing in frontend development. With over 2 years of experience, I'm skilled in React, Vue, Svelte, and other frontend technologies. I have a particular passion for creating beautiful and user-friendly websites and applications.
+      </p>
+      <p>
+        I've had the opportunity to work on fintech projects, where I've gained valuable expertise in delivering precise and secure solutions with seamless user experiences. I firmly believe that a well-crafted user interface can greatly impact the success of a software product.
+      </p>
+      <p>
+        I'm excited to bring my technical skills and dedication to your organization. If you're seeking a frontend developer who can create exceptional user experiences while paying attention to detail, I'm the ideal candidate. Let's collaborate and bring your projects to life!"
+
+Feel free to adjust and customize this version as well to best represent your skills and experiences.
+      </p>
+    </div>
+
+    <div>
+      <img class="at-me-profile" src={JPEG_img("me2")} alt="" />
+    </div>
   </div>
 
   <div class="at-tech--tools">
     <h2>Skill & Tools</h2>
-    <div class="row">
+    <div class="row ">
       {#each stack as tech_stack (tech_stack)}
         <img
           class="col-5 sm-3 md-2 margin-small shadow hover-shadow"
@@ -243,8 +270,25 @@
 </main>
 
 <style>
+  .at-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .at-bg-pattern {
+    background-image: url("./assets/Oval-Overlap-1.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: contain;
+    height: 50px;
+    width: 60px;
+    position: absolute;
+    z-index: 10;
+    transform: translateY(120px) translateX(50px);
+  }
   h2 {
     margin: 30px 0px;
+    text-align: justify;
   }
   .w-100 {
     width: 100%;
@@ -268,6 +312,7 @@
   :global(textarea) {
     width: 100%;
     max-width: 500px;
+    min-height: 200px;
   }
   .to-top {
     padding: 0.6em 1em;
@@ -285,6 +330,12 @@
     align-items: center;
     flex-direction: column;
   }
+  .at-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 
   .at-8 {
     margin: 50px 0;
@@ -292,16 +343,23 @@
 
   .at-profile {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: start;
     flex-direction: column;
     width: 100%;
+
+    text-align: justify;
     height: 100%;
     margin: 10px 0;
   }
 
+  .at-profile h2 {
+    line-height: 30px;
+    text-align: justify;
+  }
   .at-profile p {
     line-height: 30px;
+    text-align: justify;
   }
 
   .at-grid {
@@ -310,11 +368,67 @@
     gap: 15px;
   }
 
+  .at-stroke-arrow {
+    max-width: 55px;
+    transform: translateY(-25px);
+    margin-right: 10px;
+  }
+  .at-cta-btn-con {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .at-cta-btn-con img {
+    max-width: 55px;
+    transform: rotate(180deg) !important;
+  }
+
+  .at-flex-between {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .at-flex-between .at-me-profile {
+    max-width: 300px;
+    transform: rotate(5deg);
+  }
+
   @media (min-width: 500px) {
     .at-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 15px;
+    }
+
+    .at-bg-pattern {
+      background-image: url("./assets/Oval-Overlap-1.svg");
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-size: contain;
+      height: 50px;
+      width: 150px;
+      position: absolute;
+      z-index: 10;
+      transform: translateY(120px) translateX(140px);
+    }
+
+    .at-cta-btn-con {
+      display: flex;
+      flex-direction: row !important;
+    }
+
+    .at-flex-between {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row !important;
+    }
+
+    .at-flex-between .at-me-profile {
+      max-width: 400px;
+      transform: rotate(5deg);
     }
   }
 
@@ -323,6 +437,57 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 15px;
+    }
+
+    .at-stroke-arrow {
+      max-width: 100px;
+      transform: translateY(-40px) rotate(12deg);
+      margin-right: 10px;
+    }
+
+    .at-bg-pattern {
+      background-image: url("./assets/Oval-Overlap-1.svg");
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-size: contain;
+      height: 50px;
+      width: 150px;
+      position: absolute;
+      z-index: 10;
+      transform: translateY(120px) translateX(140px);
+    }
+
+    .at-cta-btn-con img {
+      max-width: 100px;
+    }
+
+    .at-cta-btn-con {
+      display: flex;
+      flex-direction: row !important;
+    }
+
+    .at-profile p {
+      line-height: 30px;
+      text-align: justify;
+      width: 75%;
+    }
+
+    .at-flex-between {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row !important;
+      padding: 50px 0;
+    }
+
+    .at-flex-between .at-me-profile {
+      max-width: 450px;
+      transform: rotate(6deg);
+    }
+
+    .at-tech--tools {
+      padding: 50px 0;
+      width: 100%;
     }
   }
 </style>

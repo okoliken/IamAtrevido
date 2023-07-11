@@ -19,7 +19,7 @@
   </Button>
   <Button
     class="animate__animated animate__tada animate__delay-1s animate__repeat-2"
-    href="https://www.linkedin.com/in/jahbuchim-okoli-0b1719224/"
+    href="https://www.linkedin.com/in/okoli-jahbuchim-0b1719224/"
     target="_blank"
   >
     LinkedIn
@@ -29,5 +29,9 @@
 <style>
   .at-t4 {
     transform: translateX(-10px) translateY(40px);
+  }
+
+  :global(a){
+    margin-right: 6px;
   }
 </style>
