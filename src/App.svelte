@@ -1,7 +1,6 @@
 <script lang="ts">
   import { concurrent } from "svelte-typewriter";
   import "animate.css";
-  import 'papercss/dist/paper.min.css'
   import { fade, fly } from "svelte/transition";
   import AtAvatar from "./lib/AtAvatar.svelte";
   import Socials from "./lib/Socials.svelte";

@@ -21,7 +21,7 @@
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "animate.css": "^4.1.1",
-    "spaper": "^1.0.0",
+    "spaper": "^1.1.1",
     "svelte-typewriter": "^3.1.6"
   }
 }
