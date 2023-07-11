@@ -183,17 +183,25 @@
     <div class="at-profile">
       <h2>Who am I</h2>
       <p>
-        Certainly! Here's a more concise version:
-
-"Hello! I'm a detail-oriented software developer specializing in frontend development. With over 2 years of experience, I'm skilled in React, Vue, Svelte, and other frontend technologies. I have a particular passion for creating beautiful and user-friendly websites and applications.
+        Certainly! Here's a more concise version: "Hello! I'm a detail-oriented
+        software developer specializing in frontend development. With over 2
+        years of experience, I'm skilled in React, Vue, Svelte, and other
+        frontend technologies. I have a particular passion for creating
+        beautiful and user-friendly websites and applications.
       </p>
       <p>
-        I've had the opportunity to work on fintech projects, where I've gained valuable expertise in delivering precise and secure solutions with seamless user experiences. I firmly believe that a well-crafted user interface can greatly impact the success of a software product.
+        I've had the opportunity to work on fintech projects, where I've gained
+        valuable expertise in delivering precise and secure solutions with
+        seamless user experiences. I firmly believe that a well-crafted user
+        interface can greatly impact the success of a software product.
       </p>
       <p>
-        I'm excited to bring my technical skills and dedication to your organization. If you're seeking a frontend developer who can create exceptional user experiences while paying attention to detail, I'm the ideal candidate. Let's collaborate and bring your projects to life!"
-
-Feel free to adjust and customize this version as well to best represent your skills and experiences.
+        I'm excited to bring my technical skills and dedication to your
+        organization. If you're seeking a frontend developer who can create
+        exceptional user experiences while paying attention to detail, I'm the
+        ideal candidate. Let's collaborate and bring your projects to life!"
+        Feel free to adjust and customize this version as well to best represent
+        your skills and experiences.
       </p>
     </div>
 
@@ -204,7 +212,7 @@ Feel free to adjust and customize this version as well to best represent your sk
 
   <div class="at-tech--tools">
     <h2>Skill & Tools</h2>
-    <div class="row ">
+    <div class="row">
       {#each stack as tech_stack (tech_stack)}
         <img
           class="col-5 sm-3 md-2 margin-small shadow hover-shadow"
@@ -246,6 +254,7 @@ Feel free to adjust and customize this version as well to best represent your sk
 
   <div class="at-contact-me margin-bottom-small">
     <h2>Contact me</h2>
+    <p>Send a message!</p>
     <form action="https://formspree.io/f/mvonlybp" class="w-100" method="post">
       <Input
         name="name"
@@ -271,9 +280,8 @@ Feel free to adjust and customize this version as well to best represent your sk
 
 <style>
   .at-container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
+    padding:0 20px;
+    width: 100% !important;
   }
   .at-bg-pattern {
     background-image: url("./assets/Oval-Overlap-1.svg");
@@ -304,7 +312,11 @@ Feel free to adjust and customize this version as well to best represent your sk
   }
   :global(html) {
     scroll-behavior: smooth;
+   
   }
+:global(body){
+  overflow-x: hidden;
+}
   :global(input) {
     width: 100%;
     max-width: 500px;
@@ -325,10 +337,11 @@ Feel free to adjust and customize this version as well to best represent your sk
     right: 0%;
   }
   .at-flexbox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column !important;
+    width: 100% !important;
   }
   .at-flex {
     display: flex;
@@ -422,17 +435,28 @@ Feel free to adjust and customize this version as well to best represent your sk
     .at-flex-between {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-direction: row !important;
+    
+      flex-direction: column;
     }
 
     .at-flex-between .at-me-profile {
       max-width: 400px;
       transform: rotate(5deg);
     }
+
+    .at-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+    }
   }
 
   @media (min-width: 700px) {
+    .at-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+    }
     .at-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
