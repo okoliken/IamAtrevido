@@ -3,7 +3,7 @@
 <script lang="ts">
   import { concurrent } from "svelte-typewriter";
   import "animate.css";
-  import 'papercss/dist/paper.min.css'
+
   import { fade, fly } from "svelte/transition";
   import AtAvatar from "./lib/AtAvatar.svelte";
   import Socials from "./lib/Socials.svelte";
@@ -186,7 +186,7 @@
     <div class="at-profile">
       <h2>Who am I</h2>
       <p>
-        Certainly! Here's a more concise version: "Hello! I'm a detail-oriented
+        "Hello! I'm a detail-oriented
         software developer specializing in frontend development. With over 2
         years of experience, I'm skilled in React, Vue, Svelte, and other
         frontend technologies. I have a particular passion for creating
@@ -484,6 +484,7 @@
 
     .at-cta-btn-con img {
       max-width: 100px;
+      transform: rotate(200deg) !important;
     }
 
     .at-cta-btn-con {
