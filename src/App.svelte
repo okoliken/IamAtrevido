@@ -105,7 +105,7 @@
       content: "More than just shorter links",
       img: "image-gallery",
       btnText: "Check it out",
-      link: "https://urlshortly-vue.netlify.app/",
+      link: "https://image-gallery-v.netlify.app/",
     },
     {
       title: "Huddle",
@@ -203,8 +203,6 @@
         organization. If you're seeking a frontend developer who can create
         exceptional user experiences while paying attention to detail, I'm the
         ideal candidate. Let's collaborate and bring your projects to life!"
-        Feel free to adjust and customize this version as well to best represent
-        your skills and experiences.
       </p>
     </div>
 
